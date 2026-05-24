@@ -1,0 +1,11 @@
+{
+  "name": "full-node",
+  "private": true,
+  "scripts": {
+    "dev:backend": "npm run start:dev --prefix backend",
+    "dev:consumer": "npm run start:consumer:dev --prefix backend",
+    "dev:frontend": "npm start --prefix frontend",
+    "dev": "npm run dev:backend & npm run dev:frontend",
+    "build": "npm run build --prefix backend && npm run build --prefix frontend"
+  }
+}

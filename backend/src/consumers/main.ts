@@ -1,3 +1,4 @@
+import '../load-env';
 import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { ConsumersModule } from './consumers.module';

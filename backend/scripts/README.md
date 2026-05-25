@@ -6,9 +6,11 @@ Các demo Kafka chạy **độc lập bằng script CLI** — không cần NestJ
 
 ```
 scripts/
-├── _shared/           # Helper dùng chung
-├── single-node/       # Demo 1: produce/consume cơ bản
-└── partition/         # Demo 2: partition, offset, round-robin
+├── _shared/
+├── single-node/       # Demo 1
+├── partition/         # Demo 2: round-robin, không key
+└── key-order/         # Demo 3: message key & ordering
+└── manual-commit/     # Demo 4: manual commit (NestJS consumer)
 ```
 
 ## Docker (chung cho mọi demo)
@@ -53,6 +55,20 @@ npm run kafka:partition:consume
 
 ---
 
+## Demo 3 — Message Keys & Ordering
+
+Topic: `demo-key-order` (3 partitions, key = `user_id`)
+
+```bash
+npm run kafka:key-order:setup
+npm run kafka:key-order:produce
+npm run kafka:key-order:consume
+```
+
+→ Chi tiết: [`key-order/README.md`](./key-order/README.md) | [`docs/kafka4.md`](../docs/kafka4.md)
+
+---
+
 ## NestJS (tuỳ chọn)
 
 | Demo | NestJS | Script |
@@ -60,3 +76,4 @@ npm run kafka:partition:consume
 | Single node produce | — | `kafka:single:produce` |
 | Single node consume | `backend/` → `start:consumer:dev` | `kafka:single:consume` |
 | Partition | — | `kafka:partition:*` |
+| Key & ordering | — | `kafka:key-order:*` |

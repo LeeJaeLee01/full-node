@@ -236,9 +236,11 @@ Chi tiết script: [`scripts/partition/README.md`](../scripts/partition/README.m
 
 ## 11. So sánh: có key vs không key
 
+Xem chi tiết demo và kiểm chứng: [`kafka4.md`](./kafka4.md)
+
 | | Không key (demo này) | Có key |
 |---|---------------------|--------|
-| Partitioner | LegacyPartitioner (round-robin) | Hash key |
+| Partitioner | LegacyPartitioner (round-robin) | Hash(key) — mặc định |
 | Phân bổ | Đều qua các partition | Cùng key → cùng partition |
 | Ordering | Không đảm bảo global order | Order theo key trong 1 partition |
 | Use case | Load balancing đơn giản | Event của cùng entity (userId, orderId) |
@@ -268,6 +270,7 @@ docker exec -it full-node-kafka /opt/kafka/bin/kafka-topics.sh \
 
 - [`kafka1.md`](./kafka1.md) — setup Kafka single node, produce/consume cơ bản
 - [`kafka2.md`](./kafka2.md) — partition, offset, round-robin (tài liệu này)
+- [`kafka4.md`](./kafka4.md) — message key & ordering
 - [`scripts/README.md`](../scripts/README.md) — index demo scripts
 
 ---

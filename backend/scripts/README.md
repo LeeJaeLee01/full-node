@@ -6,11 +6,10 @@ Các demo Kafka chạy **độc lập bằng script CLI** — không cần NestJ
 
 ```
 scripts/
-├── _shared/
-├── single-node/       # Demo 1
-├── partition/         # Demo 2: round-robin, không key
-└── key-order/         # Demo 3: message key & ordering
-└── manual-commit/     # Demo 4: manual commit (NestJS consumer)
+├── _shared/           # Helper dùng chung
+├── single-node/       # Demo 1: produce/consume cơ bản
+├── partition/         # Demo 2: partition, offset, round-robin
+└── consumer-group/    # Demo 3: consumer group, load sharing
 ```
 
 ## Docker (chung cho mọi demo)
@@ -55,17 +54,20 @@ npm run kafka:partition:consume
 
 ---
 
-## Demo 3 — Message Keys & Ordering
+## Demo 3 — Consumer Group & Chia sẻ tải
 
-Topic: `demo-key-order` (3 partitions, key = `user_id`)
+Topic: `demo-consumer-group` (3 partitions), 4 consumer cùng group
 
 ```bash
-npm run kafka:key-order:setup
-npm run kafka:key-order:produce
-npm run kafka:key-order:consume
+npm run kafka:group:setup
+npm run kafka:group:produce
+npm run kafka:group:consume -- 1   # mở thêm terminal 2,3,4 với id 2–4
+# hoặc một lệnh:
+npm run kafka:group:consume-all
+npm run kafka:group:describe
 ```
 
-→ Chi tiết: [`key-order/README.md`](./key-order/README.md) | [`docs/kafka4.md`](../docs/kafka4.md)
+→ Chi tiết: [`consumer-group/README.md`](./consumer-group/README.md) | [`docs/kafka3.md`](../docs/kafka3.md)
 
 ---
 
@@ -76,4 +78,4 @@ npm run kafka:key-order:consume
 | Single node produce | — | `kafka:single:produce` |
 | Single node consume | `backend/` → `start:consumer:dev` | `kafka:single:consume` |
 | Partition | — | `kafka:partition:*` |
-| Key & ordering | — | `kafka:key-order:*` |
+| Consumer group | — | `kafka:group:*` |

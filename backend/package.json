@@ -25,11 +25,19 @@
     "kafka:partition:setup": "ts-node scripts/partition/setup.ts",
     "kafka:partition:produce": "ts-node scripts/partition/produce.ts",
     "kafka:partition:consume": "ts-node scripts/partition/consume.ts",
+<<<<<<< Updated upstream
     "kafka:key-order:setup": "ts-node scripts/key-order/setup.ts",
     "kafka:key-order:produce": "ts-node scripts/key-order/produce.ts",
     "kafka:key-order:consume": "ts-node scripts/key-order/consume.ts",
     "kafka:manual-commit:setup": "ts-node scripts/manual-commit/setup.ts",
     "kafka:manual-commit:produce": "ts-node scripts/manual-commit/produce.ts",
+=======
+    "kafka:group:setup": "ts-node scripts/consumer-group/setup.ts",
+    "kafka:group:produce": "ts-node scripts/consumer-group/produce.ts",
+    "kafka:group:consume": "ts-node scripts/consumer-group/consume.ts",
+    "kafka:group:consume-all": "ts-node scripts/consumer-group/consume-all.ts",
+    "kafka:group:describe": "ts-node scripts/consumer-group/describe.ts",
+>>>>>>> Stashed changes
     "kafka:produce": "npm run kafka:single:produce",
     "kafka:consume": "npm run kafka:single:consume",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",

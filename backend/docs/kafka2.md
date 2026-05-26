@@ -271,6 +271,7 @@ docker exec -it full-node-kafka /opt/kafka/bin/kafka-topics.sh \
 - [`kafka1.md`](./kafka1.md) — setup Kafka single node, produce/consume cơ bản
 - [`kafka2.md`](./kafka2.md) — partition, offset, round-robin (tài liệu này)
 - [`kafka4.md`](./kafka4.md) — message key & ordering
+- [`kafka3.md`](./kafka3.md) — consumer group & chia sẻ tải
 - [`scripts/README.md`](../scripts/README.md) — index demo scripts
 
 ---

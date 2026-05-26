@@ -385,7 +385,7 @@ Trên Kafka UI có thể thấy topic **`__consumer_offsets`** (tag **IN** = Int
 | **Dung lượng** | Rất nhỏ (metadata offset, không phải message app) |
 | **Có xóa được?** | **Không** — consumer groups sẽ mất offset |
 
-Topic cần quan tâm: `demo-messages` (demo này), `demo-partitions` (demo kafka2).
+Topic cần quan tâm: `demo-messages` (demo này), `demo-partitions` (kafka2), `demo-consumer-group` (kafka3).
 
 ---
 
@@ -417,3 +417,5 @@ Topic cần quan tâm: `demo-messages` (demo này), `demo-partitions` (demo kafk
 - [Apache Kafka Docker Image](https://hub.docker.com/r/apache/kafka)
 - [UI for Apache Kafka (Provectus)](https://github.com/provectus/kafka-ui)
 - [`scripts/README.md`](../scripts/README.md) — index demo scripts
+- [`kafka2.md`](./kafka2.md) — partition & offset
+- [`kafka3.md`](./kafka3.md) — consumer group & chia sẻ tải
